@@ -39,6 +39,10 @@ export const API_ENDPOINTS = {
   ADMIN_COUNT: `${API_BASE_URL}/adminCount`,
   EMPLOYEE_COUNT: `${API_BASE_URL}/employeeCount`,
   SALARY_COUNT: `${API_BASE_URL}/salary`,
+  
+  // Budget endpoints
+  GET_CURRENT_BUDGET: `${API_BASE_URL}/monthlybudget/current`,
+  SET_BUDGET: `${API_BASE_URL}/monthlybudget/set`,
 };
 
 // Helper function to get full API URL

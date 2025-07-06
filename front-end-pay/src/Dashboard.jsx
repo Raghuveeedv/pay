@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { API_ENDPOINTS } from './config'
 
 function Dashboard() {
 	const navigate = useNavigate()
 	axios.defaults.withCredentials = true;
 
 	useEffect(() => {
-		axios.get('https://pay-1-h0kp.onrender.com/api/v1/dashboard', { withCredentials: true })
+		axios.get(API_ENDPOINTS.DASHBOARD, { withCredentials: true })
 		  .then(res => {
 			if (res.data.Status === "Success") {
 			  if (res.data.email !== "admin@gmail.com") {
@@ -27,7 +28,7 @@ function Dashboard() {
 	  }, []);
 
 	const handleLogout = () => {
-		axios.get('https://pay-1-h0kp.onrender.com/api/v1/logout', { withCredentials: true })
+		axios.get(API_ENDPOINTS.LOGOUT, { withCredentials: true })
 		  .then(res => {
 			if (res.data.Status === "Success") {
 			  localStorage.removeItem('token');

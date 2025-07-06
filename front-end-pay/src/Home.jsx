@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { API_ENDPOINTS } from './config';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,7 +11,7 @@ function Home() {
   const budget = 1900000;
 
   useEffect(() => {
-    axios.get('https://pay-1-h0kp.onrender.com/api/v1/getEmployee')
+    axios.get(API_ENDPOINTS.GET_ALL_EMPLOYEES)
       .then(res => {
         if (res.data.Status === 'Success') {
           setEmployeeData(res.data.Result);

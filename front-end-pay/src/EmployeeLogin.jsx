@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer,toast } from 'react-toastify'
+import { API_ENDPOINTS } from './config'
 
 function EmployeeLogin() {
 
@@ -17,7 +18,7 @@ function EmployeeLogin() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://pay-1-h0kp.onrender.com/api/v1/employeelogin', values)
+        axios.post(API_ENDPOINTS.EMPLOYEE_LOGIN, values)
           .then(res => {
             if (res.data.Status === 'Success') {
               const id = res.data.id;

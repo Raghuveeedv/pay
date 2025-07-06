@@ -1,10 +1,11 @@
 // ProtectedRoute.js
 import axios from "axios";
+import { API_ENDPOINTS } from './config';
 
 useEffect(() => {
   const token = localStorage.getItem("token"); // or sessionStorage.getItem("token")
 
-  axios.get("https://pay-1-h0kp.onrender.com/api/v1/dashboard", {
+  axios.get(API_ENDPOINTS.DASHBOARD, {
     headers: {
       "x-token": token
     }

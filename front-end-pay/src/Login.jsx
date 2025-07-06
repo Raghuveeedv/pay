@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import { API_ENDPOINTS } from './config';
 function Login() {
 
     const [values, setValues] = useState({
@@ -14,7 +15,7 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://pay-1-h0kp.onrender.com/api/v1/login', values)
+        axios.post(API_ENDPOINTS.LOGIN, values)
           .then(res => {
             if (res.data.Status === 'Success') {
               navigate('/dashboard');
@@ -22,7 +23,10 @@ function Login() {
               toast.error(res.data.Error);
             }
           })
-          .catch(err => console.log(err));
+          .catch(err => {
+            console.log(err);
+            toast.error('Login failed. Please check your credentials.');
+          });
       };
       
 

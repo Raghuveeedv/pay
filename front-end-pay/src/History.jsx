@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { API_ENDPOINTS } from './config'
 
 const History = () => {
     const [attendances,setAttendances]=useState([])
     useEffect(()=>{
-        axios.get("https://pay-1-h0kp.onrender.com/api/v1/attendances").then(res=>{
+        axios.get(API_ENDPOINTS.GET_ATTENDANCES).then(res=>{
             setAttendances(res.data.attendances)
         })
     },[])

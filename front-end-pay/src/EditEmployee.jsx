@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_ENDPOINTS, getApiUrl } from './config';
 
 function EditEmployee() {
   const [data, setData] = useState({
@@ -57,7 +58,7 @@ function EditEmployee() {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`https://pay-1-h0kp.onrender.com/api/v1/get/${id}`)
+      .get(getApiUrl(API_ENDPOINTS.GET_EMPLOYEE, id))
       .then((res) => {
         setData({ ...data, ...res.data.Result });
       })
@@ -67,7 +68,7 @@ function EditEmployee() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`https://pay-1-h0kp.onrender.com/api/v1/update/${id}`, data)
+      .put(getApiUrl(API_ENDPOINTS.UPDATE_EMPLOYEE, id), data)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {

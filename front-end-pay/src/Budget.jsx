@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_ENDPOINTS } from './config';
 
 function Budget() {
   const [budget, setBudget] = useState(0);
   const [newBudget, setNewBudget] = useState('');
 
   useEffect(() => {
-    axios.get('https://pay-1-h0kp.onrender.com/api/v1/monthlybudget/current')
+    axios.get(API_ENDPOINTS.GET_CURRENT_BUDGET)
       .then(res => {
         if (res.data.budget) {
           setBudget(res.data.budget.amount);
@@ -16,7 +17,7 @@ function Budget() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://pay-1-h0kp.onrender.com/api/v1/monthlybudget/set', { amount: newBudget })
+    axios.post(API_ENDPOINTS.SET_BUDGET, { amount: newBudget })
       .then(res => {
         if (res.data.Status === "Success") {
           setBudget(res.data.budget.amount);

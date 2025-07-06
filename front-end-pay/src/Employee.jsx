@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { API_ENDPOINTS } from './config';
 
 function Employee() {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ function Employee() {
   const employeesPerPage = 20;
 
   useEffect(() => {
-    axios.get('https://pay-1-h0kp.onrender.com/api/v1/getEmployee')
+    axios.get(API_ENDPOINTS.GET_ALL_EMPLOYEES)
       .then(res => {
         if (res.data.Status === "Success") {
           setData(res.data.Result);
@@ -24,7 +25,7 @@ function Employee() {
     const confirmDelete = window.confirm("Are you sure you want to delete this employee?");
     if (!confirmDelete) return;
   
-    axios.delete(`https://pay-1-h0kp.onrender.com/api/v1/delete/${id}`)
+    axios.delete(`${API_ENDPOINTS.DELETE_EMPLOYEE}/${id}`)
       .then(res => {
         if (res.data.Status === "Success") {
           setData(prev => prev.filter(emp => emp._id !== id));

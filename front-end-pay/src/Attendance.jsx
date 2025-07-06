@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { API_ENDPOINTS } from './config'
 
 const Attendance = () => {
     const navigate=useNavigate()
@@ -12,7 +13,7 @@ const Attendance = () => {
         e.preventDefault();
  
         axios
-        .post(`https://pay-1-h0kp.onrender.com/api/v1/attendance`, { employeeId, date, status })
+        .post(API_ENDPOINTS.CREATE_ATTENDANCE, { employeeId, date, status })
         .then((res) => {
             if(res.data.Status=="Error"){
                 return setError(res.data.Error)
