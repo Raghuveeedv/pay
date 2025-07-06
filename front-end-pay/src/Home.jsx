@@ -10,7 +10,7 @@ function Home() {
   const budget = 1900000;
 
   useEffect(() => {
-    axios.get('https://fpay-back.onrender.com/api/v1/getEmployee')
+    axios.get('https://pay-1-h0kp.onrender.com/api/v1/getEmployee')
       .then(res => {
         if (res.data.Status === 'Success') {
           setEmployeeData(res.data.Result);

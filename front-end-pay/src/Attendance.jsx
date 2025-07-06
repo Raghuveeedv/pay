@@ -12,7 +12,7 @@ const Attendance = () => {
         e.preventDefault();
  
         axios
-        .post(`https://fpay-back.onrender.com/api/v1/attendance`, { employeeId, date, status })
+        .post(`https://pay-1-h0kp.onrender.com/api/v1/attendance`, { employeeId, date, status })
         .then((res) => {
             if(res.data.Status=="Error"){
                 return setError(res.data.Error)

@@ -14,7 +14,7 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://fpay-back.onrender.com/api/v1/login', values)
+        axios.post('https://pay-1-h0kp.onrender.com/api/v1/login', values)
           .then(res => {
             if (res.data.Status === 'Success') {
               navigate('/dashboard');

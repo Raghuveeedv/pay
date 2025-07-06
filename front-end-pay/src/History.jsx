@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const History = () => {
     const [attendances,setAttendances]=useState([])
     useEffect(()=>{
-        axios.get("https://fpay-back.onrender.com/api/v1/attendances").then(res=>{
+        axios.get("https://pay-1-h0kp.onrender.com/api/v1/attendances").then(res=>{
             setAttendances(res.data.attendances)
         })
     },[])

@@ -57,7 +57,7 @@ function EditEmployee() {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`https://fpay-back.onrender.com/api/v1/get/${id}`)
+      .get(`https://pay-1-h0kp.onrender.com/api/v1/get/${id}`)
       .then((res) => {
         setData({ ...data, ...res.data.Result });
       })
@@ -67,7 +67,7 @@ function EditEmployee() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`https://fpay-back.onrender.com/api/v1/update/${id}`, data)
+      .put(`https://pay-1-h0kp.onrender.com/api/v1/update/${id}`, data)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {

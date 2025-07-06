@@ -8,7 +8,7 @@ function Dashboard() {
 	axios.defaults.withCredentials = true;
 
 	useEffect(() => {
-		axios.get('https://fpay-back.onrender.com/api/v1/dashboard', { withCredentials: true })
+		axios.get('https://pay-1-h0kp.onrender.com/api/v1/dashboard', { withCredentials: true })
 		  .then(res => {
 			if (res.data.Status === "Success") {
 			  if (res.data.email !== "admin@gmail.com") {
@@ -27,7 +27,7 @@ function Dashboard() {
 	  }, []);
 
 	const handleLogout = () => {
-		axios.get('https://fpay-back.onrender.com/api/v1/logout', { withCredentials: true })
+		axios.get('https://pay-1-h0kp.onrender.com/api/v1/logout', { withCredentials: true })
 		  .then(res => {
 			if (res.data.Status === "Success") {
 			  localStorage.removeItem('token');

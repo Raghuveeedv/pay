@@ -9,7 +9,7 @@ function Employee() {
   const employeesPerPage = 20;
 
   useEffect(() => {
-    axios.get('https://fpay-back.onrender.com/api/v1/getEmployee')
+    axios.get('https://pay-1-h0kp.onrender.com/api/v1/getEmployee')
       .then(res => {
         if (res.data.Status === "Success") {
           setData(res.data.Result);
@@ -24,7 +24,7 @@ function Employee() {
     const confirmDelete = window.confirm("Are you sure you want to delete this employee?");
     if (!confirmDelete) return;
   
-    axios.delete(`https://fpay-back.onrender.com/api/v1/delete/${id}`)
+    axios.delete(`https://pay-1-h0kp.onrender.com/api/v1/delete/${id}`)
       .then(res => {
         if (res.data.Status === "Success") {
           setData(prev => prev.filter(emp => emp._id !== id));

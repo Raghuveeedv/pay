@@ -109,7 +109,7 @@ function AddEmployee() {
     formData.append('nats', data.nats);
 
     formData.append('othdeduct', data.othdeduct);
-    axios.post('https://fpay-back.onrender.com/api/v1/create', formData)
+    axios.post('https://pay-1-h0kp.onrender.com/api/v1/create', formData)
     .then((res) => {
       navigate('/dashboard/employee'); // Fixed typo
     })

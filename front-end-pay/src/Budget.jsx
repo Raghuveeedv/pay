@@ -6,7 +6,7 @@ function Budget() {
   const [newBudget, setNewBudget] = useState('');
 
   useEffect(() => {
-    axios.get('https://fpay-back.onrender.com/api/v1/monthlybudget/current')
+    axios.get('https://pay-1-h0kp.onrender.com/api/v1/monthlybudget/current')
       .then(res => {
         if (res.data.budget) {
           setBudget(res.data.budget.amount);
@@ -16,7 +16,7 @@ function Budget() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://fpay-back.onrender.com/api/v1/monthlybudget/set', { amount: newBudget })
+    axios.post('https://pay-1-h0kp.onrender.com/api/v1/monthlybudget/set', { amount: newBudget })
       .then(res => {
         if (res.data.Status === "Success") {
           setBudget(res.data.budget.amount);

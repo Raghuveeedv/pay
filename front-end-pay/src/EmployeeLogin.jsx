@@ -17,7 +17,7 @@ function EmployeeLogin() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://fpay-back.onrender.com/api/v1/employeelogin', values)
+        axios.post('https://pay-1-h0kp.onrender.com/api/v1/employeelogin', values)
           .then(res => {
             if (res.data.Status === 'Success') {
               const id = res.data.id;
