@@ -1,0 +1,46 @@
+.loginPage {
+    background: url('Images/employee ms.jpeg');
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("Images/employee ms.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+}
+
+.loginForm {
+    background-color: rgba(1, 32, 93, 0.6);
+    color: white;
+}
+
+.employee_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.empImg {
+    width: 200px;
+    height: 90px;
+    
+}
+/* Works for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.attantance input{
+    padding: 14px 10px;
+}
+.attantance label{
+    font-weight: 500;
+    margin-top: 20px;
+
+}
+.attantance h2{
+    text-align: center;
+}
