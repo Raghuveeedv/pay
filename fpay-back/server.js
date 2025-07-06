@@ -11,7 +11,8 @@ const app = express();
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'http://localhost:5173',
-    'https://sprightly-gumdrop-c46663.netlify.app'
+    'https://sprightly-gumdrop-c46663.netlify.app',
+    'https://pay-1-h0kp.onrender.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
